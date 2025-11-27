@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Aluno {
+    int matricula;
+    char nome[50];
+    float nota1;
+    float nota2;
+    float media;
+}; // ERRO 1: Faltou o ponto e vírgula aqui
+
+int main() {
+    struct Aluno aluno1; 
+    printf("--- cadastro de aluno ---\n");
+    printf("digite a matricula do aluno: ");
+    scanf("%d", &aluno1.matricula);
+    printf("digite o nome do aluno: ");
+    scanf(" %[^\n]%*c", aluno1.nome);
+    printf("digite a primeira nota: ");
+    scanf("%f", &aluno1.nota1);
+    printf("digite a segunda nota: "); 
+    scanf("%f", &aluno1.nota2);
+    aluno1.media = (aluno1.nota1 + aluno1.nota2) / 2.0;
+    printf("\n--- dados do aluno ---\n");
+    printf("matricula: %d\n", aluno1.matricula);
+    printf("nome: %s\n", aluno1.nome);
+    printf("nota 1: %.2f\n", aluno1.nota1);
+    printf("nota 2: %.2f\n", aluno1.nota2); 
+    printf("media: %.2f\n", aluno1.media);  
+
+    if (aluno1.media >= 6.0) {
+        printf("situacao: aprovado\n");
+    } else {
+        printf("situacao: reprovado\n"); 
+    }
+
+    return 0; 
+}
