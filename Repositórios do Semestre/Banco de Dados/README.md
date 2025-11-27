@@ -1,1 +1,53 @@
+README: Projeto de Modelagem de Banco de Dados - Turismo
 
+## 1. Visão Geral do Projeto
+
+Este projeto visa modelar o banco de dados para um sistema de informações focado no setor de **Turismo**. O objetivo principal é criar um esquema relacional robusto e consistente para gerenciar dados de cidades, eventos, pontos turísticos, hotéis e serviços.
+
+O modelo define as entidades, atributos e os relacionamentos necessários para a integração de todas as informações turísticas dentro de um contexto geográfico (cidade).
+
+## 2. Artefatos de Modelagem
+
+Os seguintes documentos e diagramas foram criados para detalhar a estrutura do banco de dados:
+
+| Artefato | Descrição |
+| :--- | :--- |
+| **Dicionário de Dados** | Documento que detalha cada tabela, campo, tipo de dado, tamanho e restrições (PK, FK, NOT NULL). |
+| **Diagrama Entidade-Relacionamento (DER)** | Representação gráfica do modelo conceitual, mostrando as entidades e a cardinalidade dos seus relacionamentos. |
+| **Modelo Lógico** | Representação das tabelas e colunas, destacando as chaves primárias e as referências de chaves estrangeiras. |
+
+## 3. Entidades (Tabelas) Principais
+
+O esquema é composto pelas seguintes tabelas:
+
+| Tabela | Chave Primária (PK) | Descrição |
+| :--- | :--- | :--- |
+| `cidade` | `id_cidade` | Armazena as informações geográficas básicas (nome, estado, país). |
+| `evento` | `id_evento` | Informações sobre eventos (nome, preço). |
+| `cidade_evento` | `id_cidade_evento` | Tabela de relacionamento (N:M) entre `cidade` e `evento`, incluindo data e hora. |
+| `ponto_turistico` | `id_ponto` | Detalhes sobre atrações turísticas, referenciando uma `cidade`. |
+| `hotel` | `id_hotel` | Informações de hospedagem, referenciando uma `cidade`. |
+| `tipo_servico` | `id_tipo` | Catálogo dos tipos de serviços turísticos (ex: passeios, guias). |
+| `servico_turistico` | `id_servico` | Detalhes específicos dos serviços oferecidos, referenciando uma `cidade` e um `tipo_servico`. |
+
+## 4. Estrutura de Relacionamentos (Chaves Estrangeiras - FK)
+
+O modelo estabelece fortes restrições de integridade referencial:
+
+*   **Geográfica:** As entidades `ponto_turistico`, `hotel` e `servico_turistico` estão ligadas à tabela **`cidade`** através da chave estrangeira `id_cidade`.
+*   **Eventos:** A tabela **`cidade_evento`** gerencia o relacionamento entre `cidade` (`id_cidade`) e `evento` (`id_evento`).
+*   **Serviços:** A tabela **`servico_turistico`** é categorizada pela chave estrangeira `id_tipo` que referencia a tabela **`tipo_servico`**.
+
+Todas as chaves primárias (`PK`) garantem a unicidade das linhas, e as colunas essenciais possuem a restrição **NOT NULL**, conforme detalhado no Dicionário de Dados.
+
+## 5. Grupo de Desenvolvimento
+
+O projeto foi concebido pelo grupo:
+
+*   Monic
+*   Luizangel
+*   Syang
+*   Aline
+*   Henry Clark
+*   Adrielly
+*   Kauã
