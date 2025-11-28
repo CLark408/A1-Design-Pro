@@ -74,8 +74,7 @@ Abaixo está o índice dos conhecimentos técnicos e conceituais adquiridos, org
 ### 4. Design Profissional
 *   **Foco Principal:** Soft skills, comunicação e ética na área de TI.
 *   **Conhecimentos Adquiridos:**
-    *   Desenvolvimento de **Escrita Técnica** e documentação.
-    *   Aplicação de princípios de **Ética** e **Sustentabilidade** em TI (Green IT).
+    *   Desenvolvimento de **Escrita Técnica** e documentação
     *   Técnicas de **Organização e Apresentação Profissional** (portfólio e currículo em LaTeX).
 
 ---
